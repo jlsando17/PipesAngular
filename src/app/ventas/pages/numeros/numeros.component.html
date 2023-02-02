@@ -1,0 +1,44 @@
+
+<div>
+    <h1>DecimalPipe y Porcentaje</h1>
+    <p>
+         Pipes incluidos en Angular - usualmente en el common Module
+    </p>
+</div>
+
+
+<div>
+    <div ngClass="grid">
+      <div class="col md:col-4 sm:col-9">
+        <p-card header="Ventas Netas"
+                subheader="ventas primer año">
+
+                                         <!--se usa el | number:'esto se encuentra en la dcumentacion de decimalAngular' 
+                                     1 es el entero los otros son los decimales
+                                     se puede sumar un numero fijo a la variable ventasNetas ejemplo
+                                      {{ventasNetas + 100000}} se ejecuta el JS y se suma el valor 
+                                                   -->
+               <i class="pi pi-dollar"></i>
+             {{ventasNetas | number:'1.2-2'}}
+
+        </p-card>
+   </div>
+   <div class="col md:col-4 sm:col-9">
+   
+        <p-card header="Ventas Brutas"
+             subheader="ventas primer año">
+             {{ventasNetas + 2000000 | currency:'CAD':'symbol-narrow':'1.4-4'}}
+        </p-card>
+   </div>
+   <div class="col md:col-4 sm:col-9">
+   
+    <p-card header="Ganancia Porcentual"
+         subheader="Del presenta año">
+         {{porcentaje | percent:'2.2-2'}}
+    </p-card>
+</div>
+</div>
+
+
+
+
